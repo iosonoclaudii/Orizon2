@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Mar 20, 2024 alle 16:40
+-- Creato il: Apr 05, 2024 alle 12:56
 -- Versione del server: 10.4.28-MariaDB
 -- Versione PHP: 8.2.4
 
@@ -42,11 +42,11 @@ CREATE TABLE `countries` (
 --
 
 INSERT INTO `countries` (`id`, `country`, `description`, `continent`, `tourist_rating`, `created_at`, `updated_at`) VALUES
-(1, 'Italy', 'A beautiful country in Southern Europe known for its rich history, art, and culture.', 'Europe', 9, '2024-03-20 14:19:40', '2024-03-20 14:19:40'),
-(2, 'Spain', 'Explore the vibrant culture and beautiful landscapes of Spain.', 'Europe', 8, '2024-03-20 14:19:40', '2024-03-20 14:19:40'),
-(3, 'France', 'Discover the romantic charm and exquisite cuisine of France.', 'Europe', 8, '2024-03-20 14:19:40', '2024-03-20 14:19:40'),
-(4, 'USA', 'Experience the diversity and innovation of the United States.', 'North America', 7, '2024-03-20 14:19:40', '2024-03-20 14:19:40'),
-(5, 'Japan', 'Immerse yourself in the unique blend of tradition and modernity in Japan.', 'Asia', 9, '2024-03-20 14:19:40', '2024-03-20 14:19:40');
+(1, 'Italy', 'A beautiful country in Southern Europe known for its rich history, art, and culture.', 'Europe', 9, '2024-04-04 14:55:07', '2024-04-04 14:55:07'),
+(2, 'Spain', 'Explore the vibrant culture and beautiful landscapes of Spain.', 'Europe', 8, '2024-04-04 14:55:07', '2024-04-04 14:55:07'),
+(3, 'France', 'Discover the romantic charm and exquisite cuisine of France.', 'Europe', 8, '2024-04-04 14:55:07', '2024-04-04 14:55:07'),
+(4, 'USA', 'Experience the diversity and innovation of the United States.', 'North America', 7, '2024-04-04 14:55:07', '2024-04-04 14:55:07'),
+(5, 'Japan', 'Immerse yourself in the unique blend of tradition and modernity in Japan.', 'Asia', 9, '2024-04-04 14:55:07', '2024-04-04 14:55:07');
 
 -- --------------------------------------------------------
 
@@ -106,13 +106,13 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(15, '2014_10_12_000000_create_users_table', 1),
-(16, '2014_10_12_100000_create_password_reset_tokens_table', 1),
-(17, '2019_08_19_000000_create_failed_jobs_table', 1),
-(18, '2019_12_14_000001_create_personal_access_tokens_table', 1),
-(19, '2024_03_12_125318_create_countries_table', 1),
-(20, '2024_03_12_125325_create_trips_table', 1),
-(21, '2024_03_12_125332_create_country_trip_table', 1);
+(36, '2014_10_12_000000_create_users_table', 1),
+(37, '2014_10_12_100000_create_password_reset_tokens_table', 1),
+(38, '2019_08_19_000000_create_failed_jobs_table', 1),
+(39, '2019_12_14_000001_create_personal_access_tokens_table', 1),
+(40, '2024_03_12_125318_create_countries_table', 1),
+(41, '2024_03_12_125325_create_trips_table', 1),
+(42, '2024_03_12_125332_create_country_trip_table', 1);
 
 -- --------------------------------------------------------
 
@@ -168,11 +168,11 @@ CREATE TABLE `trips` (
 --
 
 INSERT INTO `trips` (`id`, `city`, `departure_date`, `return_date`, `available_seats`, `price`, `promotion_description`, `created_at`, `updated_at`) VALUES
-(1, 'Rome', '2024-05-01', '2024-05-07', 50, 1000.00, 'Explore the ancient wonders of Rome on this unforgettable journey!', '2024-03-20 14:19:56', '2024-03-20 14:19:56'),
-(2, 'Paris', '2024-06-15', '2024-06-20', 30, 1200.00, 'Discover the charm of Paris with our special offer!', '2024-03-20 14:19:56', '2024-03-20 14:19:56'),
-(3, 'Tokyo', '2024-08-10', '2024-08-20', 40, 1500.00, 'Experience the dynamic energy of Tokyo, the capital city of Japan!', '2024-03-20 14:19:56', '2024-03-20 14:19:56'),
-(4, 'New York City', '2024-09-05', '2024-09-12', 35, 1800.00, 'Discover the iconic landmarks and vibrant culture of New York City!', '2024-03-20 14:19:56', '2024-03-20 14:19:56'),
-(5, 'Barcelona', '2024-07-20', '2024-07-27', 25, 1100.00, 'Immerse yourself in the lively atmosphere and architectural marvels of Barcelona!', '2024-03-20 14:19:56', '2024-03-20 14:19:56');
+(1, 'Rome', '2024-05-01', '2024-05-07', 50, 1000.00, 'Explore the ancient wonders of Rome on this unforgettable journey!', '2024-04-04 14:55:14', '2024-04-04 14:55:14'),
+(2, 'Paris', '2024-06-15', '2024-06-20', 30, 1200.00, 'Discover the charm of Paris with our special offer!', '2024-04-04 14:55:14', '2024-04-04 14:55:14'),
+(3, 'Tokyo', '2024-08-10', '2024-08-20', 40, 1500.00, 'Experience the dynamic energy of Tokyo, the capital city of Japan!', '2024-04-04 14:55:14', '2024-04-04 14:55:14'),
+(4, 'New York City', '2024-09-05', '2024-09-12', 35, 1800.00, 'Discover the iconic landmarks and vibrant culture of New York City!', '2024-04-04 14:55:14', '2024-04-04 14:55:14'),
+(5, 'Barcelona', '2024-07-20', '2024-07-27', 25, 1100.00, 'Immerse yourself in the lively atmosphere and architectural marvels of Barcelona!', '2024-04-04 14:55:14', '2024-04-04 14:55:14');
 
 -- --------------------------------------------------------
 
@@ -275,7 +275,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT per la tabella `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT per la tabella `personal_access_tokens`
