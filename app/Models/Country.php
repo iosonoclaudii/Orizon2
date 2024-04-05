@@ -2,13 +2,11 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Country extends Model
 {
-    use HasFactory;
-
+    // Fields that are mass assignable
     protected $fillable = [
         'country',
         'description',
@@ -16,11 +14,9 @@ class Country extends Model
         'tourist_rating',
     ];
 
-    /**
-     * Define a many-to-many relationship with the Trip model.
-     */
+    // Define the relationship with the Trip model (Many-to-Many)
     public function trips()
     {
-        return $this->belongsToMany(Trip::class);
+        return $this->belongsToMany(Trip::class, 'country_trip');
     }
 }

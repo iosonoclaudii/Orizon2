@@ -2,21 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Country;
+use Illuminate\Http\Request;
 
 class CountryController extends Controller
 {
+    //Fetch all countries.
     public function index()
     {
-         // Retrieve all countries from the database
         $countries = Country::all();
-        return response()->json($countries, 200);
+
+        return response()->json($countries, 200); // Get all countries and return JSON response
     }
 
+    //Create a new country.
     public function store(Request $request)
     {
-        // Validate the incoming request data
         $request->validate([
             'country' => 'required|string|unique:countries,country',
             'description' => 'nullable|string',
@@ -24,31 +25,20 @@ class CountryController extends Controller
             'tourist_rating' => 'nullable|integer',
         ]);
 
-         // Create a new country record in the database
-         $country = Country::create([
-            'country' => $request->country,
-            'description' => $request->description,
-            'continent' => $request->continent,
-            'tourist_rating' => $request->tourist_rating,
-        ]);
+        $country = Country::create($request->all());
 
-        // Return the newly created country with a success status code
-        return response()->json($country, 201);
+        return response()->json($country, 201);// Return JSON response with created country
     }
 
-    public function show($id)
+    //Show details of a specific country.
+    public function show(Country $country)
     {
-        // Find the specified country by its ID
-        $country = Country::findOrFail($id);
         return response()->json($country, 200);
     }
 
-    public function update(Request $request, $id)
+    //Update an existing country.
+    public function update(Request $request, Country $country)
     {
-        // Find the country to update by its ID
-        $country = Country::findOrFail($id);
-
-         // Validate the incoming request data
         $request->validate([
             'country' => 'required|string|unique:countries,country,' . $country->id,
             'description' => 'nullable|string',
@@ -56,27 +46,24 @@ class CountryController extends Controller
             'tourist_rating' => 'nullable|integer',
         ]);
 
-        // Update the country record in the database
-        $country->update([
-            'country' => $request->country,
-            'description' => $request->description,
-            'continent' => $request->continent,
-            'tourist_rating' => $request->tourist_rating,
-        ]);
+        $country->update($request->all());
 
-        // Return the updated country with a success status code
-        return response()->json($country, 200);
+        return response()->json($country, 200);// Return JSON response with updated country
     }
 
-    public function destroy($id)
+    //Delete a specific country.
+    public function destroy(Country $country)
     {
-        // Find the country to delete by its ID
-        $country = Country::findOrFail($id);
-        
-        // Delete the country record from the database
         $country->delete();
 
-        // Return a success status code
         return response()->json(null, 204);
+    }
+
+    //Fetch trips associated with a specific country.
+    public function trips(Country $country)
+    {
+        $trips = $country->trips()->with('countries')->get();
+
+        return response()->json($trips, 200);
     }
 }
