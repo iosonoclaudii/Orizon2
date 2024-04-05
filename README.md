@@ -38,6 +38,11 @@ The following are the available routes for using the APIs:
 - `PUT /api/trips/{id}`: Update information about an existing trip.
 - `DELETE /api/trips/{id}`: Delete an existing trip.
 
+  ### Many-to-Many Relationship with Country_trip
+- `GET /api/countries/{country_id}/trips`: Display all trips associated with a specific country.
+- `GET /api/trips/{trip_id}/countries`: Display all countries associated with a specific trip.
+
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss the proposed changes.
 
